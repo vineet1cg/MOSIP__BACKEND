@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+  redis:
+    image: redis:7
+    restart: always
+    volumes:
+      - redis-data:/data
+
+  backend:
+    build: .
+    container_name: ocr_backend
+    volumes:
+      - ./uploads:/app/uploads
+      - ./outputs:/app/outputs
+      - ./samples:/app/samples
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+
+  worker:
+    build: .
+    container_name: ocr_worker
+    command: celery -A celery_app.celery worker --loglevel=info -Q ocr_queue
+    volumes:
+      - ./uploads:/app/uploads
+      - ./outputs:/app/outputs
+      - ./samples:/app/samples
+    depends_on:
+      - redis
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+
+volumes:
+  redis-data:

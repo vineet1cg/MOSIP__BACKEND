@@ -1,0 +1,20 @@
+{
+  "extracted": {
+    "name": {"value": "John Doe", "confidence": 0.9, "candidates": []},
+    "age": {"value": "30", "confidence": 0.8, "candidates": []},
+    "gender": {"value": "male", "confidence": 0.8, "candidates": []},
+    "email": {"value": "john.doe@example.com", "confidence": 0.9, "candidates": []},
+    "phone": {"value": "+1234567890", "confidence": 0.85, "candidates": []},
+    "address": {"value": "123 Baker Street", "confidence": 0.6, "candidates": []},
+    "date_of_birth": {"value": "01/01/1990", "confidence": 0.8, "candidates": []}
+  },
+  "submitted": {
+    "name": "John Doe",
+    "age": "30",
+    "gender": "male",
+    "email": "john.doe@example.com",
+    "phone": "+1234567890",
+    "address": "123 Baker Street",
+    "date_of_birth": "01/01/1990"
+  }
+}

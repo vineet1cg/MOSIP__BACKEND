@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+venv/
+env/
+
+# Model artifacts (HUGE, DO NOT UPLOAD)
+*/.cache/
+.cache/
+transformers/
+trOCR/
+model/
+models/
+
+# Torch / HF cache
+~/.cache/
+~/.cache/huggingface/
+huggingface/
+
+# Output folders
+uploads/
+outputs/
+samples/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
